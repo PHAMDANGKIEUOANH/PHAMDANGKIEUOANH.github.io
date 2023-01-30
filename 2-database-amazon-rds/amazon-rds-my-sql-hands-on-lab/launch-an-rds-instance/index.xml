@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Launch an RDS Instance on AWS Networking and Content Delivery</title>
+    <link>/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/launch-an-rds-instance/</link>
+    <description>Recent content in Launch an RDS Instance on AWS Networking and Content Delivery</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/launch-an-rds-instance/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
