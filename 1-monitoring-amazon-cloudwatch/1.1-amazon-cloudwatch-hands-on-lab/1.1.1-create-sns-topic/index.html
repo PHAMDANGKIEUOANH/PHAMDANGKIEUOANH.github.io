@@ -12,21 +12,21 @@
     <title>Create SNS Topic :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675096865" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675096865" rel="stylesheet">
-    <link href="/css/hybrid.css?1675096865" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675096865" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675096865" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675096865" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675096865" rel="stylesheet">
-    <link href="/css/theme.css?1675096865" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675096865" rel="stylesheet">
+    <link href="/css/nucleus.css?1675702781" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675702781" rel="stylesheet">
+    <link href="/css/hybrid.css?1675702781" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675702781" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675702781" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675702781" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675702781" rel="stylesheet">
+    <link href="/css/theme.css?1675702781" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675702781" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675096865" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675702781" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675096865"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675702781"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675096865"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675096865"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675702781"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675702781"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675096865"></script>
+<script type="text/javascript" src="/js/search.js?1675702781"></script>
 
     
   </div>
@@ -1005,20 +1005,27 @@
 <p>First, we will set up a topic for notifying our email address</p>
 <p>1.In AWS Console, search <strong>Simple Notification Service</strong>
 or click <a href="https://console.aws.amazon.com/sns/">Amazon SNS</a></p>
-<p><img src="/images/Lab-1/2/01..png?featherlight=false&amp;width=90pc" alt="like this"></p>
+<p><img src="/images/Lab-1/1/0001.png?featherlight=false&amp;width=90pc" alt="like this"></p>
 <p>2.On the left side of the page, choose <strong>Topics</strong> or click <strong>Next step button</strong> as shown in the screen below.</p>
-<p><img src="/images/Lab-1/2/02.png?featherlight=false&amp;width=90pc" alt=""></p>
-<p><img src="/images/Lab-1/2/03.png?featherlight=false&amp;width=90pc" alt=""></p>
-<p>3.When <strong>Create topic</strong> opens. Choose <strong>Standard</strong> and includes your name and optionally a <strong>Display Name</strong>. Scroll to the bottom of the screen and click <strong>Create topic</strong>.</p>
-<p><img src="/images/Lab-1/2/04.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/1/0002.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/1/003.png?featherlight=false&amp;width=90pc" alt="">
+3.When <strong>Create topic</strong> opens. Choose <strong>Standard</strong> and includes your name and optionally a <strong>Display Name</strong>.</p>
+<p><img src="/images/Lab-1/1/0003.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>Scroll to the bottom of the screen and click <strong>Create topic</strong>.
+<img src="/images/Lab-1/2/0004.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.In the topic’s specific dashboard. Click <strong>Create subscription</strong> on the right side of the screen.</p>
-<p><img src="/images/Lab-1/2/05.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0006.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.In the Protocol, choose <strong>Email</strong> and enter a working email address you are able to access. Click <strong>Create Subscription</strong>.</p>
-<p><img src="/images/Lab-1/2/06.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0007.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/2/0008.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>When Subscription to Ko-topic created successfully.</p>
+<p><img src="/images/Lab-1/2/0009.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Check your email, open the email name <strong>AWS Notification – Subscription Confirmation</strong> and click <strong>Confirm subscription</strong> link.</p>
-<p><img src="/images/Lab-1/2/07.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0010.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>This pape show like this</p>
+<p><img src="/images/Lab-1/2/0011.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>7.Check <strong>Your subscription</strong> if the value on the status has changed from <strong>PendingConfirmatio</strong> to <strong>Confirmed</strong>.</p>
-<p><img src="/images/Lab-1/2/08.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0012.png?featherlight=false&amp;width=90pc" alt=""></p>
 
 
 
@@ -1478,19 +1485,19 @@ or click <a href="https://console.aws.amazon.com/sns/">Amazon SNS</a></p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675096865"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675096865"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675096865"></script>
-    <script src="/js/jquery.sticky.js?1675096865"></script>
-    <script src="/js/featherlight.min.js?1675096865"></script>
-    <script src="/js/highlight.pack.js?1675096865"></script>
+    <script src="/js/clipboard.min.js?1675702781"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675702781"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675702781"></script>
+    <script src="/js/jquery.sticky.js?1675702781"></script>
+    <script src="/js/featherlight.min.js?1675702781"></script>
+    <script src="/js/highlight.pack.js?1675702781"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675096865"></script>
-    <script src="/js/learn.js?1675096865"></script>
-    <script src="/js/hugo-learn.js?1675096865"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675702781"></script>
+    <script src="/js/learn.js?1675702781"></script>
+    <script src="/js/hugo-learn.js?1675702781"></script>
 
-    <link href="/mermaid/mermaid.css?1675096865" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675096865"></script>
+    <link href="/mermaid/mermaid.css?1675702781" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675702781"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

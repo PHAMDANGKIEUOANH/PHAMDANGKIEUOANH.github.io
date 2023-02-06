@@ -219,6 +219,16 @@
                 />
   </url><url>
     <loc>/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/"
+                />
   </url><url>
     <loc>/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/create-an-rds-snapshot-optional/</loc>
     <xhtml:link

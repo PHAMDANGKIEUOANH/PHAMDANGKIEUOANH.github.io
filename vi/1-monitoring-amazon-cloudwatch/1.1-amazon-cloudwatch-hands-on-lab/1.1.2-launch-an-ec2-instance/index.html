@@ -12,21 +12,21 @@
     <title>Khởi chạy phiên bản EC2 :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675096865" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675096865" rel="stylesheet">
-    <link href="/css/hybrid.css?1675096865" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675096865" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675096865" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675096865" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675096865" rel="stylesheet">
-    <link href="/css/theme.css?1675096865" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675096865" rel="stylesheet">
+    <link href="/css/nucleus.css?1675702782" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675702782" rel="stylesheet">
+    <link href="/css/hybrid.css?1675702782" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675702782" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675702782" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675702782" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675702782" rel="stylesheet">
+    <link href="/css/theme.css?1675702782" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675702782" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675096865" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675702782" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675096865"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675702782"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675096865"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675096865"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675702782"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675702782"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675096865"></script>
+<script type="text/javascript" src="/js/search.js?1675702782"></script>
 
     
   </div>
@@ -207,6 +207,34 @@
         ">
       <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.3-configure-a-cloudwatch-alarm/">
            <b> 1.1.3 </b> Định cấu hình báo thức CloudWatch
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/">
+           <b> 1.1.4 </b> Dọn dẹp tài nguyên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -976,9 +1004,10 @@
 	<h4 id="khởi-chạy-phiên-bản-đám-mây-điện-toán-đàn-hồi-ec2"><strong>Khởi chạy phiên bản Đám mây điện toán đàn hồi (EC2)</strong></h4>
 <p>Trong bước này, chúng ta sẽ khởi chạy phiên bản EC2 và định cấu hình <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html"><strong>User Data</strong></a> để cài đặt và khởi chạy công cụ.</p>
 <p>Đăng nhập vào Amazon EC2 và nhấp vào <a href="https://console.aws.amazon.com/ec2"><strong>EC2 Dashboard</strong></a>, chọn <strong>Launch instance</strong> như hình dưới.</p>
-<p><img src="/images/Lab-1/2/09.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0013.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0014.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.Trong phần <strong>Quick Start</strong>, chọn <strong>Amazon Linux AMI</strong>.</p>
-<p><img src="/images/Lab-1/2/10.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0015.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.Kéo xuống phần <strong>Advanced details</strong>. Trong mục <strong>User data</strong> dán đoạn code sau vào:</p>
 <pre tabindex="0"><code class="language-yum" data-lang="yum">#!/bin/sh 
 yum -y update
@@ -986,15 +1015,17 @@ amazon-linux-extras install epel -y
 yum install stress -y
 stress -c 1 --backoff 300000000 -t 30m
 </code></pre><p>Tập lệnh thử nghiệm sẽ chạy một ứng suất công cụ tạo khối lượng công việc được thiết kế để đưa hệ thống vào một thước đo CPU có thể định cấu hình. Chúng tôi định cấu hình căng thẳng để sinh ra 1 công nhân với thời gian là 300000000 micro giây hoặc 5 phút trong 30 phút.</p>
-<p><img src="/images/Lab-1/2/11.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0016.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.Trong phần <strong>Instance type</strong> chọn <strong>t2.micro</strong>. Phần <strong>Key pair(login)</strong> chọn <code>Proceed without a key pair (Not recommended)</code></p>
-<p><img src="/images/Lab-1/2/12.png?featherlight=false&amp;width=90pc" alt=""></p>
-<p>5.Ở phần <strong>Name and tags</strong> nhấn chọn <strong>Add additional tags</strong>. Ghi <code>Name</code> trong mục <strong>key</strong> và ở mục <strong>Value</strong> bạn có thế viết tên theo mẫu sau: “[Your Name] Server”. Ở lab này , chúng ta sử dụng <code>KieuOanh Server</code></p>
-<p><img src="/images/Lab-1/2/13.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0017.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>5.Ở phần <strong>Name and tags</strong> nhấn chọn <strong>Add additional tags</strong>. Ghi <code>Name</code> trong mục <strong>key</strong> và ở mục <strong>Value</strong> bạn có thế viết tên theo mẫu sau: “[Your Name] Server”. Ở lab này , chúng ta sử dụng <code>KO Server</code></p>
+<p><img src="/images/Lab-1/2/0018.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/2/0019.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Nhấn chọn <strong>Launch instance</strong> trong trang nhỏ bên phải màn hình.</p>
-<p><img src="/images/Lab-1/2/14.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0020.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>7.Nhấp vào nút <strong>View Instances</strong>  ở phần dưới bên phải của màn hình để xem danh sách các phiên bản EC2. Sau khi phiên bản của bạn đã khởi chạy, bạn sẽ thấy máy chủ của mình cũng như Vùng sẵn sàng của phiên bản đó.</p>
-<p><img src="/images/Lab-1/2/15.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/2/0021.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/2/0022.png?featherlight=false&amp;width=90pc" alt=""></p>
 
 
 
@@ -1105,6 +1136,22 @@ stress -c 1 --backoff 300000000 -t 30m
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1441,19 +1488,19 @@ stress -c 1 --backoff 300000000 -t 30m
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675096865"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675096865"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675096865"></script>
-    <script src="/js/jquery.sticky.js?1675096865"></script>
-    <script src="/js/featherlight.min.js?1675096865"></script>
-    <script src="/js/highlight.pack.js?1675096865"></script>
+    <script src="/js/clipboard.min.js?1675702782"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675702782"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675702782"></script>
+    <script src="/js/jquery.sticky.js?1675702782"></script>
+    <script src="/js/featherlight.min.js?1675702782"></script>
+    <script src="/js/highlight.pack.js?1675702782"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675096865"></script>
-    <script src="/js/learn.js?1675096865"></script>
-    <script src="/js/hugo-learn.js?1675096865"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675702782"></script>
+    <script src="/js/learn.js?1675702782"></script>
+    <script src="/js/hugo-learn.js?1675702782"></script>
 
-    <link href="/mermaid/mermaid.css?1675096865" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675096865"></script>
+    <link href="/mermaid/mermaid.css?1675702782" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675702782"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

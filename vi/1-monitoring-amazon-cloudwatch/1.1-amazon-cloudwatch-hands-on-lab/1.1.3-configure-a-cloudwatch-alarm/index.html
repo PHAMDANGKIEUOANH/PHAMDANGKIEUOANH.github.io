@@ -12,21 +12,21 @@
     <title>Định cấu hình báo thức CloudWatch :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675096865" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675096865" rel="stylesheet">
-    <link href="/css/hybrid.css?1675096865" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675096865" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675096865" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675096865" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675096865" rel="stylesheet">
-    <link href="/css/theme.css?1675096865" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675096865" rel="stylesheet">
+    <link href="/css/nucleus.css?1675702782" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675702782" rel="stylesheet">
+    <link href="/css/hybrid.css?1675702782" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675702782" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675702782" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675702782" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675702782" rel="stylesheet">
+    <link href="/css/theme.css?1675702782" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675702782" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675096865" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675702782" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675096865"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675702782"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675096865"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675096865"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675702782"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675702782"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675096865"></script>
+<script type="text/javascript" src="/js/search.js?1675702782"></script>
 
     
   </div>
@@ -207,6 +207,34 @@
         ">
       <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.3-configure-a-cloudwatch-alarm/">
            <b> 1.1.3 </b> Định cấu hình báo thức CloudWatch
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/">
+           <b> 1.1.4 </b> Dọn dẹp tài nguyên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -975,20 +1003,25 @@
 
 	<h4 id="định-cấu-hình-báo-thức-cloudwatch"><strong>Định cấu hình báo thức CloudWatch</strong></h4>
 <p>1.Trong <strong>EC2 Console</strong>, nhấp vào hộp kiểm tra bên cạnh tên máy chủ của bạn để xem thông tin chi tiết về phiên bản EC2 này. Nhấp chuột <strong>Actions</strong> &raquo; <strong>Monitor and troubleshoot</strong> &raquo; <strong>Manage detailed monitoring</strong>.</p>
-<p><img src="/images/Lab-1/2/16.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/0024.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>Sau đó nhấn chọn vào <strong>Enable</strong> trong Giám sát chi tiết để cung cấp dữ liệu giám sát trong khoảng thời gian 1 phút so với mặc định là 5 phút. Nhấn chọn <strong>Save</strong></p>
+<p><img src="/images/Lab-1/3/0025.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.Tiếp tục thực hiện  nhấn chọn <strong>Actions</strong> &raquo; <strong>Monitor and troubleshoot</strong> &raquo; <strong>Manage CloudWatch alarms</strong>.</p>
-<p><img src="/images/Lab-1/2/16.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/0027.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.Nhấp chọn <strong>Create an alarm</strong>.Trong phần <strong>Alarm notification</strong>, Chọn SNS Topic đã tạo. Trong mục <strong>Alarm thresholds</strong>, đặt các giá trị như hiển thị bên dưới và sau đó nhấp vào <strong>Create</strong>.</p>
-<p><img src="/images/Lab-1/2/17.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/0028.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/3/0029.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.Ở khu vực trên cùng bên trái của Bảng điều khiển AWS, chọn Dịch vụ, nhấp vào <strong>Service</strong> <a href="https://console.aws.amazon.com/cloudwatch">CloudWatch</a>. Nhấp chọn <strong>Alarms</strong> trong ngăn bên trái của Bảng điều khiển và chọn Console và nhấn chọn <strong>All alarms</strong>. Kiểm tra trạng thái Alarm của bạn. Nếu hiện <code>INSUFFICIENT_DATA</code> (vì bạn vừa tạo xong) và sau đó nó báo OK. Bạn cũng có thể sử dụng id phiên bản để lọc cảnh báo cho phiên bản EC2 của mình.</p>
 <p><img src="/images/Lab-1/2/18.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.Trong CloudWatch Console, chọn <strong>Metrics</strong> trong ngăn bên trái. Nhấn vào <strong>All Metrics</strong> và paste vào <strong>Instance ID</strong> của bạn ở mục filter như hình sau.</p>
-<p><img src="/images/Lab-1/2/20.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/0031.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/3/0033.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Nhấp chọn Per-Instance Metrics và sau đó thêm một CPU lọc bổ sung. Chọn <strong>CPUUtilization</strong> ở mục metric. Và nhấn vào <strong>Graphed metrics</strong> thay đổi <strong>Period</strong> từ 1 Minute. Thay đổi khoảng đồ thị <strong>custom</strong> thành 30m và  chọn Auto refresh là 1 phút.</p>
-<p><img src="/images/Lab-1/2/19.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/0034.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/3/0035.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/3/0036.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>7.Sau 5 phút, tool sẽ bắt đầu mô phỏng khối lượng công việc của CPU và kích hoạt Báo thức khi đạt đến ngưỡng. Bạn có thể xem trạng thái Cảnh báo trong bảng điều khiển CloudWatch bên dưới <strong>Alarms</strong>. Nhấn vào mục <strong>All alarms</strong> và bạn sẽ có thể xem báo thức được định cấu hình. Nếu bạn thiết lập thông báo qua email, bạn sẽ nhận được thông báo qua email khi Báo thức được kích hoạt.</p>
-<p><img src="/images/Lab-1/2/21.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/0037.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><strong>Xin chúc mừng! Bạn đã định cấu hình thành công Báo thức CloudWatch!</strong></p>
 
 
@@ -1109,6 +1142,25 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1119,9 +1171,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1426,7 +1475,7 @@
 			<a class="nav nav-prev" href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.2-launch-an-ec2-instance/" title="Khởi chạy phiên bản EC2"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/2-database-amazon-rds/" title="Cơ sở dữ liệu - Amazon RDS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/" title="Dọn dẹp tài nguyên" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1436,19 +1485,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675096865"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675096865"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675096865"></script>
-    <script src="/js/jquery.sticky.js?1675096865"></script>
-    <script src="/js/featherlight.min.js?1675096865"></script>
-    <script src="/js/highlight.pack.js?1675096865"></script>
+    <script src="/js/clipboard.min.js?1675702782"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675702782"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675702782"></script>
+    <script src="/js/jquery.sticky.js?1675702782"></script>
+    <script src="/js/featherlight.min.js?1675702782"></script>
+    <script src="/js/highlight.pack.js?1675702782"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675096865"></script>
-    <script src="/js/learn.js?1675096865"></script>
-    <script src="/js/hugo-learn.js?1675096865"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675702782"></script>
+    <script src="/js/learn.js?1675702782"></script>
+    <script src="/js/hugo-learn.js?1675702782"></script>
 
-    <link href="/mermaid/mermaid.css?1675096865" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675096865"></script>
+    <link href="/mermaid/mermaid.css?1675702782" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675702782"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
