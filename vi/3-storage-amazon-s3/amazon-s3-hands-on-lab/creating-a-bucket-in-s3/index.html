@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.106.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Tạo một bucket trong S3 :: AWS Networking and Content Delivery</title>
+
+    
+    <link href="/css/nucleus.css?1675970763" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675970763" rel="stylesheet">
+    <link href="/css/hybrid.css?1675970763" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675970763" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675970763" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675970763" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675970763" rel="stylesheet">
+    <link href="/css/theme.css?1675970763" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675970763" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1675970763" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1675970763"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/creating-a-bucket-in-s3/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1675970763"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675970763"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/vi";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1675970763"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/" title="Giám sát - Amazon CloudWatch" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/">
+           <b> 1. </b> Giám sát - Amazon CloudWatch
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/" title="Amazon CloudWatch Hands on Lab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/">
+           <b> 1.1 </b> Amazon CloudWatch Hands on Lab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.1-create-sns-topic/" title="Tạo SNS Topic" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.1-create-sns-topic/">
+           <b> 1.1.1 </b> Tạo SNS Topic
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.2-launch-an-ec2-instance/" title="Khởi chạy phiên bản EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.2-launch-an-ec2-instance/">
+           <b> 1.1.2 </b> Khởi chạy phiên bản EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.3-configure-a-cloudwatch-alarm/" title="Định cấu hình báo thức CloudWatch" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.3-configure-a-cloudwatch-alarm/">
+           <b> 1.1.3 </b> Định cấu hình báo thức CloudWatch
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/">
+           <b> 1.1.4 </b> Dọn dẹp tài nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/" title="Cơ sở dữ liệu - Amazon RDS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/">
+           <b> 2. </b> Cơ sở dữ liệu - Amazon RDS
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/" title="Amazon RDS MySQL Hands on Lab" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/">
+           <b> 2.1 </b> Amazon RDS MySQL Hands on Lab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/create-vpc-security-group/" title="Tạo VPC Security Group" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/create-vpc-security-group/">
+           <b> 2.1.1 </b> Tạo VPC Security Group
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/launch-an-rds-instance/" title="Khởi chạy một phiên bản RDS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/launch-an-rds-instance/">
+           <b> 2.1.2 </b> Khởi chạy một phiên bản RDS
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Save RDS Credentials" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/">
+           <b> 2.1.3 </b> Save RDS Credentials
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/access-rds-from-ec2/" title="Truy cập RDS từ EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/access-rds-from-ec2/">
+           <b> 2.1.4 </b> Truy cập RDS từ EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/create-an-rds-snapshot-optional/" title="Tạo một RDS Snapshot (Optional)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/create-an-rds-snapshot-optional/">
+           <b> 2.1.5 </b> Tạo một RDS Snapshot (Optional)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/modify-rds-instance-size-optional/" title="Sửa đổi kích thước phiên bản RDS (Tùy chọn)" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/modify-rds-instance-size-optional/">
+           <b> 2.1.6 </b> Sửa đổi kích thước phiên bản RDS (Tùy chọn)
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/clean-up-resources/" title="Dọn dẹp tài nguyên" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/clean-up-resources/">
+           <b> 2.1.7 </b> Dọn dẹp tài nguyên
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/" title="Lưu trữ - Amazon S3" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/">
+           <b> 3. </b> Lưu trữ - Amazon S3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/" title="Amazon S3 Hands-On Lab" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/">
+           <b> 3.1 </b> Amazon S3 Hands-On Lab
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/creating-a-bucket-in-s3/" title="Tạo một bucket trong S3" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/creating-a-bucket-in-s3/">
+           <b> 3.1.1 </b> Tạo một bucket trong S3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/adding-object-to-your-s3-bucket/" title="Thêm đối tượng vào bộ chứa S3 của bạn" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/adding-object-to-your-s3-bucket/">
+           <b> 3.1.2 </b> Thêm đối tượng vào bộ chứa S3 của bạn
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/working-with-objects-in-the-s3-console/" title="Làm việc với các đối tượng trong Bảng điều khiển S3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/working-with-objects-in-the-s3-console/">
+           <b> 3.1.3 </b> Làm việc với các đối tượng trong Bảng điều khiển S3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/accessing-objects-stored-in-s3/" title="Truy cập các đối tượng được lưu trữ trong S3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/accessing-objects-stored-in-s3/">
+           <b> 3.1.4 </b> Truy cập các đối tượng được lưu trữ trong S3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/enabling-bucket-versioning/" title="Kích hoạt phiên bản Bucket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/enabling-bucket-versioning/">
+           <b> 3.1.5 </b> Kích hoạt phiên bản Bucket
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/setting-up-a-lifecycle-policy/" title="Cài đặt Lifecycle Policy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/setting-up-a-lifecycle-policy/">
+           <b> 3.1.6 </b> Cài đặt Lifecycle Policy
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/clean-up.-deleting-the-objects-and-the-s3-bucket/" title="Dọn dẹp: Xóa đối tượng và vùng chứa S3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/clean-up.-deleting-the-objects-and-the-s3-bucket/">
+           <b> 3.1.7 </b> Dọn dẹp: Xóa đối tượng và vùng chứa S3
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+                    
+                    
+                      <option id="en" value="/3-storage-amazon-s3/amazon-s3-hands-on-lab/creating-a-bucket-in-s3/">English</option>
+                    
+                  
+              
+                  
+              
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/creating-a-bucket-in-s3/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=8180230&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=&style=7830892&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/vanhoangkha/"  style="color:orange">Kiều Oanh </a> <br>
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'>AWS General Immersion Day</a> > <a href='/vi/3-storage-amazon-s3/'>Lưu trữ - Amazon S3</a> > <a href='/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/'>Amazon S3 Hands-On Lab</a> > Tạo một bucket trong S3
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Tạo một bucket trong S3
+            </h1>
+          
+
+        
+
+
+
+	<h4 id="mọi-đối-tượng-trong-amazon-s3-được-lưu-trữ-trong-một-bộ-chứa-trước-khi-bạn-có-thể-lưu-trữ-dữ-liệu-trong-amazon-s3-bạn-phải-tạo-một-bộ-chứa"><strong>Mọi đối tượng trong Amazon S3 được lưu trữ trong một bộ chứa. Trước khi bạn có thể lưu trữ dữ liệu trong Amazon S3, bạn phải tạo một bộ chứa.</strong></h4>
+<blockquote>
+<p>Bạn không bị tính phí khi tạo nhóm; bạn chỉ bị tính phí khi lưu trữ đồ vật trong thùng và chuyển đồ vật vào và ra khỏi thùng.</p>
+</blockquote>
+<p>1.Để tìm và mở S3, bạn có thể sử dụng thanh tìm kiếm hoặc nhấp vào liên kết Dịch vụ ở góc trên bên trái của màn hình để hiển thị menu dịch vụ. Bên dưới &ldquo;Storage&rdquo; chọn S3 hoặc mở Amazon S3 console <a href="https://console.aws.amazon.com/s3">here</a></p>
+<p><img src="/images/Lab-1/4/0009.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>2.Click vào <strong>Create Bucket</strong>. Bạn sẽ được đưa đến trang &ldquo;Creat Bucket&rdquo; để bắt đầu thiết lập nhóm của mình</p>
+<p><img src="/images/Lab-1/4/0010.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>3.Nhập vào tên &ldquo;Bucket name&rdquo;. Tên bucket bạn chọn phải là duy nhất trên tất cả các tên bộ chứa hiện có trong Amazon S3. Một cách có thể làm cho tên nhóm của bạn trở nên độc đáo là thêm tiền tố tên nhóm của bạn bằng tên viết tắt của bạn và tên tổ chức của bạn. ví dụ [your initials]-[your org]-s3-lab
+Tên Bucket phải tuân thủ các yêu cầu sau:</p>
+<ul>
+<li>Chỉ có thể chứa chữ thường, số, dấu chấm (.) và dấu gạch ngang (-) (Không có chữ HOA!)</li>
+<li>Phải bắt đầu bằng số hoặc chữ cái</li>
+<li>Phải dài từ 3 đến 255 ký tự</li>
+<li>Không được định dạng dưới dạng địa chỉ IP (ví dụ: 265.255.5.4)</li>
+<li>Trong danh sách thả xuống Khu vực, hãy chọn cùng khu vực nơi bạn thiết lập máy chủ lưu trữ web của mình với CloudFormation.</li>
+</ul>
+<p>Phần tiếp theo &ldquo;Block Public Access settings for this bucket&rdquo;.Chúng tôi sẽ làm việc với một nhóm riêng tư, vì vậy hãy chọn Chặn tất cả quyền truy cập công khai. Bạn có thể thiết lập bộ chứa của mình để truy cập công khai, cung cấp cho người dùng và ứng dụng khả năng truy cập các đối tượng trong bộ chứa thông qua một địa chỉ DNS duy nhất. Chúng tôi sẽ không làm điều đó cho phòng thí nghiệm này. Trong một phần sau, chúng ta sẽ thực hiện quy trình thiết lập quyền truy cập vào các đối tượng của bạn mà không công khai bộ chứa.</p>
+<p><img src="/images/Lab-1/4/0011.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>5.Hiện tại, bạn có thể để phần còn lại của cài đặt làm mặc định, chúng tôi sẽ bật tính năng tạo phiên bản trên bộ chứa của chúng tôi sau này trong lab. Bây giờ bấm vào <strong>Create bucket</strong>.</p>
+<p><img src="/images/Lab-1/4/0012.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>6.Bây giờ, bạn sẽ quay lại trang hiển thị tất cả các nhóm S3 của mình, hãy nhấp vào tên của nhóm bạn vừa tạo.</p>
+<p><img src="/images/Lab-1/4/0013.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>7.Bây giờ, bạn sẽ quay lại trang hiển thị tất cả các nhóm S3 của mình, hãy nhấp vào tên của nhóm bạn vừa tạo. Nhóm của bạn sẽ hiển thị &ldquo;Đối tượng (0)&rdquo;.</p>
+<p><img src="/images/Lab-1/4/0014.png?featherlight=false&amp;width=90pc" alt=""></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/" title="Amazon S3 Hands-On Lab"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/adding-object-to-your-s3-bucket/" title="Thêm đối tượng vào bộ chứa S3 của bạn" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1675970763"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675970763"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675970763"></script>
+    <script src="/js/jquery.sticky.js?1675970763"></script>
+    <script src="/js/featherlight.min.js?1675970763"></script>
+    <script src="/js/highlight.pack.js?1675970763"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675970763"></script>
+    <script src="/js/learn.js?1675970763"></script>
+    <script src="/js/hugo-learn.js?1675970763"></script>
+
+    <link href="/mermaid/mermaid.css?1675970763" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675970763"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

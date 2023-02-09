@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thêm đối tượng vào bộ chứa S3 của bạn on AWS Networking and Content Delivery</title>
+    <link>/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/adding-object-to-your-s3-bucket/</link>
+    <description>Recent content in Thêm đối tượng vào bộ chứa S3 của bạn on AWS Networking and Content Delivery</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/adding-object-to-your-s3-bucket/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
