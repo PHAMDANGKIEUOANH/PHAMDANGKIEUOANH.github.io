@@ -12,21 +12,21 @@
     <title>Amazon S3 Hands-On Lab :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702782" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702782" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702782" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702782" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702782" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702782" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702782" rel="stylesheet">
-    <link href="/css/theme.css?1675702782" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702782" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974148" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974148" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974148" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974148" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974148" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974148" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974148" rel="stylesheet">
+    <link href="/css/theme.css?1675974148" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974148" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702782" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974148" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702782"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974148"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702782"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702782"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974148"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974148"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702782"></script>
+<script type="text/javascript" src="/js/search.js?1675974148"></script>
 
     
   </div>
@@ -390,13 +390,13 @@
  
   
     
-    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Save RDS Credentials" class="dd-item 
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Lưu thông tin xác thực RDS" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/">
-           <b> 2.1.3 </b> Save RDS Credentials
+           <b> 2.1.3 </b> Lưu thông tin xác thực RDS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1020,11 +1020,11 @@
 <p><strong>Tải xuống và khởi chạy mẫu CloudFormation</strong></p>
 <p>1.Tải &ldquo;S3-General-ID-Lab.yaml&rdquo; CloudFormation template bằng cách nhấn vào <a href="https://static.us-east-1.prod.workshops.aws/public/078307b9-3d3e-4e5b-b91a-d4926e2760bf/static/common/s3_general_lab/S3-General-ID-Lab.yaml">this link</a> và lưu nó vào ổ cứng cục bộ của bạn.</p>
 <p>2.Trong Bảng điều khiển AWS, tìm kiếm <code>CloudFormation</code> hoặc chọn menu Dịch vụ và nhấp vào <strong>CloudFormation</strong> trong &ldquo;Quản lý &amp; quản trị&rdquo;.</p>
-<p><img src="/images/Lab-1/4/02.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0001.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.Trong phần <strong>CloudFormation</strong> chọn <strong>Create stack</strong> rồi nhấn chọn <strong>With new resources (standard)</strong>.</p>
-<p><img src="/images/Lab-1/4/03.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0002.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.Dưới <strong>Template source</strong> chọn <strong>Upload a template file</strong> rối nhấn vào <strong>Choose file</strong>. Chọn file có tên &ldquo;S3-General-ID-Lab.yaml&rdquo; bạn đã tải xuống ở bước đầu tiên. Khi bạn đã chọn tệp mẫu, hãy nhấp vào Next button.</p>
-<p><img src="/images/Lab-1/4/04.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0003.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.Trên trang Chỉ định chi tiết ngăn xếp, hãy điền vào các trường sau:</p>
 <p>a. Dưới &ldquo;Stack name&rdquo; có tên dạng sau [Your Initials]-S3-Web-Host.</p>
 <p>b. Bạn có thể để &ldquo;AmiID&rdquo; làm mặc định, dẫn đến việc sử dụng phiên bản mới nhất của AMI này.</p>
@@ -1032,10 +1032,11 @@
 <p>d.Dưới &ldquo;MyIP&rdquo; nhập địa chỉ IP của máy cục bộ của bạn theo sau là /32. Điều này sẽ khóa cổng HTTP 80 vào máy của bạn. Bạn có thể tìm IP cục bộ của mình bằng cách tìm kiếm <a href="https://www.google.com/search?q=What+is+my+ip%3F&amp;rlz">What is my IP</a>.</p>
 <p>e. Dưới &ldquo;MyVPC&rdquo; chọn VPC bạn muốn sử dụng để thiết lập phiên bản. Trong hầu hết các tài khoản, VPC mặc định sẽ là một lựa chọn tốt và trong các tài khoản AWS mới, đó sẽ là lựa chọn duy nhất.</p>
 <p>f. Dưới &ldquo;PublicSubnet&rdquo; chọn một mạng con trong VPC của bạn có quyền truy cập internet. Một mạng con công khai được xác định bởi một mạng con có một tuyến đường đến cổng internet trong bảng định tuyến của nó. Theo mặc định, các mạng con VPC mặc định đều là công khai.</p>
-<p><img src="/images/Lab-1/4/05.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0004.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0005.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Khi bạn đã hoàn tất việc nhập các chi tiết ở trên, hãy nhấp vào Next. Trong trang tiếp theo, &ldquo;Configure stack options&rdquo;, có thể bỏ qua &ldquo;Tags&rdquo;, &ldquo;Permissions&rdquo;, và &ldquo;Advanced options&rdquo; để chọn Next.</p>
 <p>7.Chờ đến khi &ldquo;Logical ID&rdquo; &ldquo;[Your Initials]-S3-Web-Host&rdquo; hiện trạng thái &ldquo;CREATE_COMPLETE&rdquo;. Bạn sẽ cần nhấp vào nút làm mới để nhận trạng thái cập nhật của ngăn xếp của mình.</p>
-<p><img src="/images/Lab-1/4/06.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0006.png?featherlight=false&amp;width=90pc" alt=""></p>
 <blockquote>
 <p>Quá trình tạo ngăn xếp CloudFormation sẽ hoàn tất sau khoảng 3 phút.</p>
 </blockquote>
@@ -1043,6 +1044,8 @@
 <p><img src="/images/Lab-1/4/07.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><strong>Xác nhận thiết lập thành công phiên bản của bạn</strong></p>
 <p>Bạn có thể thấy trang &ldquo;S3 Hands-On Lab&rdquo; ta dùng trong bài lab</p>
+<p><img src="/images/Lab-1/4/0007.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0008.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><img src="/images/Lab-1/4/08.png?featherlight=false&amp;width=90pc" alt=""></p>
 <blockquote>
 <p>Nếu trang không tải, bạn nên đợi phiên bản của mình &ldquo;Status check&rdquo; hiện &ldquo;2/2 checks passed&rdquo; rồi thử lại.</p>
@@ -1508,19 +1511,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702782"></script>
-    <script src="/js/jquery.sticky.js?1675702782"></script>
-    <script src="/js/featherlight.min.js?1675702782"></script>
-    <script src="/js/highlight.pack.js?1675702782"></script>
+    <script src="/js/clipboard.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974148"></script>
+    <script src="/js/jquery.sticky.js?1675974148"></script>
+    <script src="/js/featherlight.min.js?1675974148"></script>
+    <script src="/js/highlight.pack.js?1675974148"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702782"></script>
-    <script src="/js/learn.js?1675702782"></script>
-    <script src="/js/hugo-learn.js?1675702782"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974148"></script>
+    <script src="/js/learn.js?1675974148"></script>
+    <script src="/js/hugo-learn.js?1675974148"></script>
 
-    <link href="/mermaid/mermaid.css?1675702782" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702782"></script>
+    <link href="/mermaid/mermaid.css?1675974148" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974148"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

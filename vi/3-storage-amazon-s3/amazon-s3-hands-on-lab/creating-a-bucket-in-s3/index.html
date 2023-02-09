@@ -12,21 +12,21 @@
     <title>Tạo một bucket trong S3 :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702782" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702782" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702782" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702782" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702782" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702782" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702782" rel="stylesheet">
-    <link href="/css/theme.css?1675702782" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702782" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974149" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974149" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974149" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974149" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974149" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974149" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974149" rel="stylesheet">
+    <link href="/css/theme.css?1675974149" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974149" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702782" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974149" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702782"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974149"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702782"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702782"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974149"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974149"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702782"></script>
+<script type="text/javascript" src="/js/search.js?1675974149"></script>
 
     
   </div>
@@ -390,13 +390,13 @@
  
   
     
-    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Save RDS Credentials" class="dd-item 
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Lưu thông tin xác thực RDS" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/">
-           <b> 2.1.3 </b> Save RDS Credentials
+           <b> 2.1.3 </b> Lưu thông tin xác thực RDS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1006,8 +1006,9 @@
 <p>Bạn không bị tính phí khi tạo nhóm; bạn chỉ bị tính phí khi lưu trữ đồ vật trong thùng và chuyển đồ vật vào và ra khỏi thùng.</p>
 </blockquote>
 <p>1.Để tìm và mở S3, bạn có thể sử dụng thanh tìm kiếm hoặc nhấp vào liên kết Dịch vụ ở góc trên bên trái của màn hình để hiển thị menu dịch vụ. Bên dưới &ldquo;Storage&rdquo; chọn S3 hoặc mở Amazon S3 console <a href="https://console.aws.amazon.com/s3">here</a></p>
+<p><img src="/images/Lab-1/4/0009.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.Click vào <strong>Create Bucket</strong>. Bạn sẽ được đưa đến trang &ldquo;Creat Bucket&rdquo; để bắt đầu thiết lập nhóm của mình</p>
-<p><img src="/images/Lab-1/4/09.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0010.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.Nhập vào tên &ldquo;Bucket name&rdquo;. Tên bucket bạn chọn phải là duy nhất trên tất cả các tên bộ chứa hiện có trong Amazon S3. Một cách có thể làm cho tên nhóm của bạn trở nên độc đáo là thêm tiền tố tên nhóm của bạn bằng tên viết tắt của bạn và tên tổ chức của bạn. ví dụ [your initials]-[your org]-s3-lab
 Tên Bucket phải tuân thủ các yêu cầu sau:</p>
 <ul>
@@ -1018,9 +1019,13 @@ Tên Bucket phải tuân thủ các yêu cầu sau:</p>
 <li>Trong danh sách thả xuống Khu vực, hãy chọn cùng khu vực nơi bạn thiết lập máy chủ lưu trữ web của mình với CloudFormation.</li>
 </ul>
 <p>Phần tiếp theo &ldquo;Block Public Access settings for this bucket&rdquo;.Chúng tôi sẽ làm việc với một nhóm riêng tư, vì vậy hãy chọn Chặn tất cả quyền truy cập công khai. Bạn có thể thiết lập bộ chứa của mình để truy cập công khai, cung cấp cho người dùng và ứng dụng khả năng truy cập các đối tượng trong bộ chứa thông qua một địa chỉ DNS duy nhất. Chúng tôi sẽ không làm điều đó cho phòng thí nghiệm này. Trong một phần sau, chúng ta sẽ thực hiện quy trình thiết lập quyền truy cập vào các đối tượng của bạn mà không công khai bộ chứa.</p>
+<p><img src="/images/Lab-1/4/0011.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.Hiện tại, bạn có thể để phần còn lại của cài đặt làm mặc định, chúng tôi sẽ bật tính năng tạo phiên bản trên bộ chứa của chúng tôi sau này trong lab. Bây giờ bấm vào <strong>Create bucket</strong>.</p>
-<p><img src="/images/Lab-1/4/12.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0012.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Bây giờ, bạn sẽ quay lại trang hiển thị tất cả các nhóm S3 của mình, hãy nhấp vào tên của nhóm bạn vừa tạo.</p>
+<p><img src="/images/Lab-1/4/0013.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>7.Bây giờ, bạn sẽ quay lại trang hiển thị tất cả các nhóm S3 của mình, hãy nhấp vào tên của nhóm bạn vừa tạo. Nhóm của bạn sẽ hiển thị &ldquo;Đối tượng (0)&rdquo;.</p>
+<p><img src="/images/Lab-1/4/0014.png?featherlight=false&amp;width=90pc" alt=""></p>
 
 
 
@@ -1483,19 +1488,19 @@ Tên Bucket phải tuân thủ các yêu cầu sau:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702782"></script>
-    <script src="/js/jquery.sticky.js?1675702782"></script>
-    <script src="/js/featherlight.min.js?1675702782"></script>
-    <script src="/js/highlight.pack.js?1675702782"></script>
+    <script src="/js/clipboard.min.js?1675974149"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974149"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974149"></script>
+    <script src="/js/jquery.sticky.js?1675974149"></script>
+    <script src="/js/featherlight.min.js?1675974149"></script>
+    <script src="/js/highlight.pack.js?1675974149"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702782"></script>
-    <script src="/js/learn.js?1675702782"></script>
-    <script src="/js/hugo-learn.js?1675702782"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974149"></script>
+    <script src="/js/learn.js?1675974149"></script>
+    <script src="/js/hugo-learn.js?1675974149"></script>
 
-    <link href="/mermaid/mermaid.css?1675702782" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702782"></script>
+    <link href="/mermaid/mermaid.css?1675974149" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974149"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

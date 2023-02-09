@@ -12,21 +12,21 @@
     <title>Truy cập các đối tượng được lưu trữ trong S3 :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702782" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702782" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702782" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702782" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702782" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702782" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702782" rel="stylesheet">
-    <link href="/css/theme.css?1675702782" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702782" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974148" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974148" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974148" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974148" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974148" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974148" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974148" rel="stylesheet">
+    <link href="/css/theme.css?1675974148" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974148" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702782" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974148" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702782"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974148"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702782"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702782"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974148"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974148"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702782"></script>
+<script type="text/javascript" src="/js/search.js?1675974148"></script>
 
     
   </div>
@@ -390,13 +390,13 @@
  
   
     
-    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Save RDS Credentials" class="dd-item 
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Lưu thông tin xác thực RDS" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/">
-           <b> 2.1.3 </b> Save RDS Credentials
+           <b> 2.1.3 </b> Lưu thông tin xác thực RDS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1010,34 +1010,43 @@ Identity và Access Management (IAM) service. Bạn có thể tìm kiến thông
 <li>Khu vực lưu trữ của bucket.</li>
 </ul>
 <p>1.Trong bảng điều khiển AWS, tìm kiếm &ldquo;IAM&rdquo; trong &ldquo;Dịch vụ&rdquo; hoặc làm theo điều này<a href="https://console.aws.amazon.com/iam">link</a>.</p>
+<p><img src="/images/Lab-1/4/00019.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.Từ menu bên trái chọn Roles.</p>
 <p>3.Click vào nút Create role.</p>
+<p><img src="/images/Lab-1/4/0020.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.Dưới phần &ldquo;Trusted entity type&rdquo; đảm bảo AWS service được chọn và dưới phần &ldquo;Use case&rdquo; chọn EC2. Xong click <strong>Next</strong>.</p>
-<p><img src="/images/Lab-1/4/18.png?featherlight=false&amp;width=90pc" alt=""></p>
-<p>5.Tiếp theo, chúng tôi sẽ tạo chính sách cấp phép cho Role của mình. Chính sách quyền xác định những hành động mà Role có thể thực hiện và những tài nguyên mà vai trò đó có thể sử dụng. Click vào <strong>Create Policy</strong>. (Thao tác này sẽ mở một tab khác trong trình duyệt của bạn)</p>
+<p><img src="/images/Lab-1/4/0021.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0022.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>5.Tiếp theo, chúng tôi sẽ tạo chính sách cấp phép cho Role của mình. Chính sách quyền xác định những hành động mà Role có thể thực hiện và những tài nguyên mà vai trò đó có thể sử dụng. Click vào <strong>Create Policy</strong>. (Thao tác này sẽ mở một tab khác trong trình duyệt của bạn).</p>
+<p><img src="/images/Lab-1/4/0023.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Ở phần &ldquo;Create Policy&rdquo; dưới mục &ldquo;Visual editor&rdquo;:
 a. Dưới &ldquo;Service&rdquo; chọn Choose a service link. Nhập S3 trong trường tìm kiếm rồi chọn S3.
 b. Dưới &ldquo;Actions&rdquo; chọn GetObject trong &ldquo;Filter actions&rdquo;. Đánh dấu vào ô bên cạnh &ldquo;GetObject&rdquo;. GetObject sẽ hạn chế phiên bản EC2 của chúng tôi chỉ có thể đọc các đối tượng trong bộ chứa mà bạn chọn trong bước tiếp theo.</p>
 <p>c. Chuyến đến &ldquo;Resources&rdquo; click chọn Specify object resource ARN cho GetObject. Đảm bảo Specify được chọn rồi click Add ARN. (ARN stands for &ldquo;Amazon Resource Name&rdquo;)</p>
 <p>d. Trong hộp thoại mở ra, hãy nhập hoặc dán [your-bucket-name] trong trường &ldquo;Bucket name &ldquo;.</p>
 <p>e. Ở &ldquo;Object name&rdquo; chọn &ldquo;Any&rdquo; và click vào Add.</p>
-<p><img src="/images/Lab-1/4/19.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0024.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0025.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0025.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0026.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>7.Bây giờ, hãy quay lại tab trình duyệt trước đó của bạn để hoàn tất việc tạo vai trò của bạn. Nhấp vào nút làm mới ở bên phải để tải chính sách mới tạo của bạn. Trong trường &ldquo;Chính sách lọc&rdquo;, tìm kiếm S3. Chọn chính sách bạn đã tạo trong các bước trước, [tên viết tắt của bạn]-EC2-S3-Truy cập, sau đó chọn Tiếp theo.</p>
-<p><img src="/images/Lab-1/4/20.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0027.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0028.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>8.Chúng tôi sẽ không gắn thẻ vai trò này để bạn có thể nhấp vào Next: Review.
 9.Tên role của bạn [your initials]-EC2-S3-Access-Role và click vào <strong>Create role</strong>.</p>
-<p><img src="/images/Lab-1/4/21.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0029.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0030.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><strong>Đính kèm vai trò mới của bạn vào phiên bản EC2 của bạn</strong></p>
 <p>Bạn đã tạo thành công một vai trò sẽ cấp cho máy chủ lưu trữ web EC2 của bạn quyền truy cập để đọc các đối tượng trong bộ chứa S3 của bạn. Bạn sẽ cần đính kèm nó vào phiên bản EC2 của mình.</p>
 <p>1.Dưới mục &ldquo;Services&rdquo; chọn EC2.</p>
 <p>2.Click vào Instances trên menu bên trái.</p>
 <p>3.Tìm instance của bạn &ldquo;[your initials] - Web Server&rdquo;.</p>
 <p>4.Nhấp chuột phải vào ví dụ của bạn, chọn Security và Modify IAM Role. Điều này cũng có thể được thực hiện bằng cách chọn phiên bản của bạn và chọn  <strong>Actions</strong>.</p>
-<p><img src="/images/Lab-1/4/22.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0032.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.Từ &ldquo;IAM role&rdquo; menu thả xuống chọn vai trò bạn đã đặt tên [your initials]-EC2-S3-Access-Role và click vào Save.</p>
-<p><img src="/images/Lab-1/4/23.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0033.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Phiên bản của bạn hiện có quyền truy cập đọc vào tài khoản riêng tư của bạn S3 bucket.</p>
-<p><img src="/images/Lab-1/4/24.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0034.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><strong>Xem đối tượng của bạn trong trình duyệt web</strong></p>
 <p>Điều hướng đến trang &ldquo;Phiên bản&rdquo; EC2, chọn &ldquo;[Your Initials]-S3-Web-Host&rdquo; và copy &ldquo;Public IPv4 DNS&rdquo; vào khay nhớ tạm của bạn bằng cách nhấp vào hình ảnh hai ô vuông chồng lên nhau ở bên trái của Địa chỉ DNS IPv4 Công cộng. Dán địa chỉ này vào một tab mới trên trình duyệt web của bạn.</p>
 <blockquote>
@@ -1515,19 +1524,19 @@ b. Dưới &ldquo;Actions&rdquo; chọn GetObject trong &ldquo;Filter actions&rd
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702782"></script>
-    <script src="/js/jquery.sticky.js?1675702782"></script>
-    <script src="/js/featherlight.min.js?1675702782"></script>
-    <script src="/js/highlight.pack.js?1675702782"></script>
+    <script src="/js/clipboard.min.js?1675974149"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974149"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974149"></script>
+    <script src="/js/jquery.sticky.js?1675974149"></script>
+    <script src="/js/featherlight.min.js?1675974149"></script>
+    <script src="/js/highlight.pack.js?1675974149"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702782"></script>
-    <script src="/js/learn.js?1675702782"></script>
-    <script src="/js/hugo-learn.js?1675702782"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974149"></script>
+    <script src="/js/learn.js?1675974149"></script>
+    <script src="/js/hugo-learn.js?1675974149"></script>
 
-    <link href="/mermaid/mermaid.css?1675702782" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702782"></script>
+    <link href="/mermaid/mermaid.css?1675974149" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974149"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

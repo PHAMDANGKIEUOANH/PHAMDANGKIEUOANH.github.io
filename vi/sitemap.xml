@@ -170,18 +170,6 @@
                 href="/vi/3-storage-amazon-s3/amazon-s3-hands-on-lab/working-with-objects-in-the-s3-console/"
                 />
   </url><url>
-    <loc>/vi/3-storage-amazon-s3/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/3-storage-amazon-s3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/3-storage-amazon-s3/"
-                />
-  </url><url>
     <loc>/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/</loc>
     <xhtml:link
                 rel="alternate"
@@ -192,6 +180,18 @@
                 rel="alternate"
                 hreflang="vi"
                 href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/"
+                />
+  </url><url>
+    <loc>/vi/3-storage-amazon-s3/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/3-storage-amazon-s3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/3-storage-amazon-s3/"
                 />
   </url><url>
     <loc>/vi/1-monitoring-amazon-cloudwatch/1.1-amazon-cloudwatch-hands-on-lab/1.1.4-clean-up-resources/</loc>

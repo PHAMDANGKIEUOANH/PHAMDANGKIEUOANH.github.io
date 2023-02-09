@@ -12,21 +12,21 @@
     <title>Truy cập RDS từ EC2 :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702782" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702782" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702782" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702782" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702782" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702782" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702782" rel="stylesheet">
-    <link href="/css/theme.css?1675702782" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702782" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974148" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974148" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974148" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974148" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974148" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974148" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974148" rel="stylesheet">
+    <link href="/css/theme.css?1675974148" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974148" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702782" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974148" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702782"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974148"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702782"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702782"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974148"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974148"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702782"></script>
+<script type="text/javascript" src="/js/search.js?1675974148"></script>
 
     
   </div>
@@ -390,13 +390,13 @@
  
   
     
-    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Save RDS Credentials" class="dd-item 
+    <li data-nav-id="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Lưu thông tin xác thực RDS" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/">
-           <b> 2.1.3 </b> Save RDS Credentials
+           <b> 2.1.3 </b> Lưu thông tin xác thực RDS
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1004,22 +1004,26 @@
 	<h4 id="cho-phép-máy-chủ-web-truy-cập-bí-mật"><strong>Cho phép máy chủ web truy cập bí mật</strong></h4>
 <p>Bây giờ chúng ta sẽ tạo một secret, và phải cấp quyền cho máy chủ web của mình để sử dụng nó. Để làm điều này, chúng ta sẽ tạo một Chính sách cho phép máy chủ web đọc một secret. Chúng ta sẽ thêm chính sách này vào Role mà ta đã chỉ định trước đó cho máy chủ web.</p>
 <p>1.Nếu bạn chưa làm như vậy, hãy tạo Hồ sơ phiên bản IAM như được mô tả trong <a href="https://catalog.workshops.aws/general-immersionday/en-US/basic-modules/10-ec2/ec2-linux/3-ec2-1">Kết nối với phiên bản Linux của bạn bằng Trình quản lý phiên</a>.</p>
+<p><img src="/images/Lab-1/3/029.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.Đăng nhập vào AWS Management Console và mở <a href="https://console.aws.amazon.com/iamv2/home#/home">IAM console</a> .Trong ngăn điều hướng, chọn <strong>Policies</strong>, rồi chọn <strong>Create Policy</strong>.</p>
-<p><img src="/images/Lab-1/3/21.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/030.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.Click vào <strong>Choose a service</strong>. Type <strong>Secrets Manager</strong> vào hộp tìm kiếm. Click <strong>Secrets Manager</strong>. Dưới phần <strong>Access level</strong>, click trên carat bên cạnh <strong>Read</strong> và sau đó đánh dấu vào ô bằng cách <strong>GetSecretValue</strong>. Click tiếp vào phần Resources. Cho bài lab này, chọn All resources. Rồi Click <strong>Next: Tags</strong>.</p>
-<p><img src="/images/Lab-1/3/22.png?featherlight=false&amp;width=90pc" alt=""></p>
-<p><img src="/images/Lab-1/3/23.png?featherlight=false&amp;width=90pc" alt=""></p>
-<p>4.Trong khung <strong>Review Policy</strong>, sẽ cho một cái tên <code>ReadSecrets</code>. Click <strong>Create policy</strong>.</p>
+<p><img src="/images/Lab-1/3/031.png?featherlight=false&amp;width=90pc" alt="">
+4.Trong khung <strong>Review Policy</strong>, sẽ cho một cái tên <code>ReadSecrets</code>. Click <strong>Create policy</strong>.</p>
+<p><img src="/images/Lab-1/3/032.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/3/033.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.Trong khung tìm kiếm, chọn Roles and type <strong>SSMInstanceProfile</strong>. Đây là Role mà ta đã tạo ở  <a href="https://catalog.workshops.aws/general-immersionday/en-US/basic-modules/10-ec2/ec2-linux/3-ec2-1">Kết nối với phiên bản Linux của bạn bằng Session Manager</a>. Click  chọn <strong>SSMInstanceProfile</strong>.</p>
-<p><img src="/images/Lab-1/3/24.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/034.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Dưới phần <strong>Permissions policies</strong>, click <strong>Attach policies</strong>.</p>
-<p><img src="/images/Lab-1/3/25.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/035.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>7.Tìm khiếm policy bạn tạo với tên <strong>ReadSecrets</strong>. Check the box và click <strong>Attach policy</strong>.</p>
-<p><img src="/images/Lab-1/3/26.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/036.png?featherlight=false&amp;width=90pc" alt=""></p>
 <h4 id="try-the-address-book"><strong>Try the Address Book</strong></h4>
 <p>1.Chuyển hướng đến <a href="https://console.aws.amazon.com/ec2/v2/home?instanceState=running">EC2 console</a> và tìm máy chủ web mà bạn đã khởi chạy trong EC2 Linux Hands-On Lab.  Lưu ý IP công cộng của máy chủ web của bạn..</p>
+<p><img src="/images/Lab-1/3/000038.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.Mở một tab mới và kết nối lại với IP công khai của máy chủ web của bạn. Click vào <strong>RDS</strong>. Bây giờ bạn sẽ thấy một trang đơn giản hiển thị tất cả thông tin từ cơ sở dữ liệu bạn vừa tạo</p>
-<p><img src="/images/Lab-1/3/27.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/3/000036.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/3/000037.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>Đây là một ví dụ rất cơ bản về một sổ địa chỉ đơn giản tương tác với một MySQL database managed với AWS. RDS có thể hỗ trợ các kịch bản cơ sở dữ liệu quan hệ phức tạp hơn nhiều, nhưng chúng tôi hy vọng ví dụ đơn giản này sẽ đủ để chứng minh quan điểm.
 Vui lòng chơi với sổ địa chỉ và thêm/chỉnh sửa/xóa nội dung khỏi cơ sở dữ liệu RDS của bạn bằng cách sử dụng các liên kết Thêm Liên hệ, Chỉnh sửa và Xóa trong Sổ Địa chỉ.</p>
 <h4 id="tuyệt-vời-lắm-bạn-đã-triển-khai-và-sử-dụng-thành-công-cơ-sở-dữ-liệu-mysql-do-aws-quản-lý"><strong>Tuyệt vời lắm: Bạn đã triển khai và sử dụng thành công cơ sở dữ liệu MySQL do AWS quản lý!!!</strong></h4>
@@ -1476,7 +1480,7 @@ Vui lòng chơi với sổ địa chỉ và thêm/chỉnh sửa/xóa nội dung 
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Save RDS Credentials"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/save-rds-credentials/" title="Lưu thông tin xác thực RDS"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/2-database-amazon-rds/amazon-rds-my-sql-hands-on-lab/create-an-rds-snapshot-optional/" title="Tạo một RDS Snapshot (Optional)" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1489,19 +1493,19 @@ Vui lòng chơi với sổ địa chỉ và thêm/chỉnh sửa/xóa nội dung 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702782"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702782"></script>
-    <script src="/js/jquery.sticky.js?1675702782"></script>
-    <script src="/js/featherlight.min.js?1675702782"></script>
-    <script src="/js/highlight.pack.js?1675702782"></script>
+    <script src="/js/clipboard.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974148"></script>
+    <script src="/js/jquery.sticky.js?1675974148"></script>
+    <script src="/js/featherlight.min.js?1675974149"></script>
+    <script src="/js/highlight.pack.js?1675974149"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702782"></script>
-    <script src="/js/learn.js?1675702782"></script>
-    <script src="/js/hugo-learn.js?1675702782"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974149"></script>
+    <script src="/js/learn.js?1675974149"></script>
+    <script src="/js/hugo-learn.js?1675974149"></script>
 
-    <link href="/mermaid/mermaid.css?1675702782" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702782"></script>
+    <link href="/mermaid/mermaid.css?1675974149" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974149"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

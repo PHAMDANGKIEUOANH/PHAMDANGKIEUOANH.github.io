@@ -12,21 +12,21 @@
     <title>Accessing objects stored in S3 :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702781" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702781" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702781" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702781" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702781" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702781" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702781" rel="stylesheet">
-    <link href="/css/theme.css?1675702781" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702781" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974148" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974148" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974148" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974148" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974148" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974148" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974148" rel="stylesheet">
+    <link href="/css/theme.css?1675974148" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974148" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702781" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974148" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702781"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974148"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702781"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702781"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974148"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974148"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702781"></script>
+<script type="text/javascript" src="/js/search.js?1675974148"></script>
 
     
   </div>
@@ -1009,34 +1009,43 @@
 <li>The region hosting our bucket.</li>
 </ul>
 <p>1.Within the AWS console search for &ldquo;IAM&rdquo; under &ldquo;Services&rdquo; or follow this <a href="https://console.aws.amazon.com/iam">link</a>.</p>
+<p><img src="/images/Lab-1/4/00019.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.From the left-hand menu select Roles.</p>
 <p>3.Click on the Create role button.</p>
+<p><img src="/images/Lab-1/4/0020.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.Under &ldquo;Trusted entity type&rdquo; make sure AWS service is selected and then under &ldquo;Use case&rdquo; select EC2. Then click on the <strong>Next</strong> button.</p>
-<p><img src="/images/Lab-1/4/18.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0021.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0022.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.Next, we will create a permission policy for our role. A permission policy defines what actions the role can take and what resources the role can use. Click on <strong>Create Policy</strong>. (This will open another tab in your browser)</p>
+<p><img src="/images/Lab-1/4/0023.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.On the &ldquo;Create Policy&rdquo; page under the &ldquo;Visual editor&rdquo; tab:
 a. Under &ldquo;Service&rdquo; select the Choose a service link. Type S3 in the search field and then select S3.</p>
 <p>b. Under &ldquo;Actions&rdquo; type GetObject in the &ldquo;Filter actions&rdquo; search. Put a check in the box next to &ldquo;GetObject&rdquo; only. GetObject will restrict our EC2 instance to only being able to read objects within the bucket you select in the next step.</p>
 <p>c. Next to &ldquo;Resources&rdquo; click on Specify object resource ARN for the GetObject action. Make sure Specify is selected and then click on Add ARN. (ARN stands for &ldquo;Amazon Resource Name&rdquo;)</p>
 <p>d. In the dialogue that opens type in or paste [your-bucket-name] in the &ldquo;Bucket name *&rdquo; field.</p>
 <p>e. For the &ldquo;Object name *&rdquo; field select the check box next to &ldquo;Any&rdquo; and then click on Add.</p>
-<p><img src="/images/Lab-1/4/19.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0024.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0025.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0025.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0026.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>7.Now return to your previous browser tab to finish creating your role. Click the refresh button on the right to load your newly created policy. In the &ldquo;Filter policies&rdquo; field search for S3. Select the policy you created in the previous steps, [your initials]-EC2-S3-Access, and then select Next.</p>
-<p><img src="/images/Lab-1/4/20.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0027.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0028.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>8.We will not be tagging this role so you can click on Next: Review.
 9.Name your role [your initials]-EC2-S3-Access-Role and click on <strong>Create role</strong>.</p>
-<p><img src="/images/Lab-1/4/21.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0029.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0030.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><strong>Attach your new role to your EC2 instance</strong></p>
 <p>You have successfully created a role that will give your EC2 web host access to read objects within your S3 bucket. You will need to attach it to your EC2 instance.</p>
 <p>1.Under &ldquo;Services&rdquo; select EC2.</p>
 <p>2.Click on Instances in the left-hand menu.</p>
 <p>3.Find your instance that you named &ldquo;[your initials] - Web Server&rdquo;.</p>
 <p>4.Right-click on your instance, select Security and then Modify IAM Role. This can also be accomplished by selecting your instance and selecting the Actions button.</p>
-<p><img src="/images/Lab-1/4/22.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0032.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.From the &ldquo;IAM role&rdquo; dropdown select your role you named [your initials]-EC2-S3-Access-Role and click on Save.</p>
-<p><img src="/images/Lab-1/4/23.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0033.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Your instance now has read access to your private S3 bucket.</p>
-<p><img src="/images/Lab-1/4/24.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0034.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><strong>View your Objects in a Web Browser</strong></p>
 <p>Navigate to the EC2 &ldquo;Instances&rdquo; page, select your instance &ldquo;[Your Initials]-S3-Web-Host&rdquo; and copy the &ldquo;Public IPv4 DNS&rdquo; address into your clipboard by clicking on the image of two overlapping squares to the left of the Public IPv4 DNS Address. Paste this address into a new tab on your web browser.</p>
 <blockquote>
@@ -1514,19 +1523,19 @@ a. Under &ldquo;Service&rdquo; select the Choose a service link. Type S3 in the 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702781"></script>
-    <script src="/js/jquery.sticky.js?1675702781"></script>
-    <script src="/js/featherlight.min.js?1675702781"></script>
-    <script src="/js/highlight.pack.js?1675702781"></script>
+    <script src="/js/clipboard.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974148"></script>
+    <script src="/js/jquery.sticky.js?1675974148"></script>
+    <script src="/js/featherlight.min.js?1675974148"></script>
+    <script src="/js/highlight.pack.js?1675974148"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702781"></script>
-    <script src="/js/learn.js?1675702781"></script>
-    <script src="/js/hugo-learn.js?1675702781"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974148"></script>
+    <script src="/js/learn.js?1675974148"></script>
+    <script src="/js/hugo-learn.js?1675974148"></script>
 
-    <link href="/mermaid/mermaid.css?1675702781" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702781"></script>
+    <link href="/mermaid/mermaid.css?1675974148" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974148"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

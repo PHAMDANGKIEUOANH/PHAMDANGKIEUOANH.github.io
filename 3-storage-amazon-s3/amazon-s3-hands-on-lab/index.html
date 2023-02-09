@@ -12,21 +12,21 @@
     <title>Amazon S3 Hands-On Lab :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702781" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702781" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702781" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702781" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702781" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702781" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702781" rel="stylesheet">
-    <link href="/css/theme.css?1675702781" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702781" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974148" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974148" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974148" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974148" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974148" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974148" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974148" rel="stylesheet">
+    <link href="/css/theme.css?1675974148" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974148" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702781" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974148" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702781"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974148"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702781"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702781"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974148"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974148"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702781"></script>
+<script type="text/javascript" src="/js/search.js?1675974148"></script>
 
     
   </div>
@@ -1020,11 +1020,11 @@
 <p><strong>Download and launch the CloudFormation template</strong></p>
 <p>1.Download the &ldquo;S3-General-ID-Lab.yaml&rdquo; CloudFormation template by right-clicking on <a href="https://static.us-east-1.prod.workshops.aws/public/078307b9-3d3e-4e5b-b91a-d4926e2760bf/static/common/s3_general_lab/S3-General-ID-Lab.yaml">this link</a> and save it to your local hard drive.</p>
 <p>2.In the AWS Console search for <code>CloudFormation</code> or select the Services menu and click on <strong>CloudFormation</strong> under &ldquo;Management &amp; Governance&rdquo;.</p>
-<p><img src="/images/Lab-1/4/02.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0001.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.In the <strong>CloudFormation</strong> console select the <strong>Create stack</strong> button and then select <strong>With new resources (standard)</strong>.</p>
-<p><img src="/images/Lab-1/4/03.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0002.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.Under <strong>Template source</strong> select <strong>Upload a template file</strong> and then select the <strong>Choose file</strong> button. Select the &ldquo;S3-General-ID-Lab.yaml&rdquo; template file you downloaded in the first step. Once you have selected the template file click on the Next button.</p>
-<p><img src="/images/Lab-1/4/04.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0003.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>5.On the Specify stack details page, fill in the following fields:</p>
 <p>a. Under &ldquo;Stack name&rdquo; name your stack [Your Initials]-S3-Web-Host.</p>
 <p>b. You can leave &ldquo;AmiID&rdquo; as the default, resulting in the use the most recent version of this AMI.</p>
@@ -1032,10 +1032,11 @@
 <p>d. Under &ldquo;MyIP&rdquo; input the IP address of your local machine followed by a /32. This will lock down HTTP port 80 to your machine. You can find your local IP by searching <a href="https://www.google.com/search?q=What+is+my+ip%3F&amp;rlz">What is my IP</a>.</p>
 <p>e. Under &ldquo;MyVPC&rdquo; select the VPC you want to use to setup the instance. In most accounts the default VPC will be a good choice and in new AWS accounts it will be the only choice.</p>
 <p>f. Under &ldquo;PublicSubnet&rdquo; select a subnet within your VPC that has internet access. A public subnet is defined by a subnet having a route to the internet gateway within its route table. By default, the default VPC subnets are all public.</p>
-<p><img src="/images/Lab-1/4/05.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0004.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0005.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>6.Once you are done entering the details above, click on Next. On the next page, &ldquo;Configure stack options&rdquo;, you can leave &ldquo;Tags&rdquo;, &ldquo;Permissions&rdquo;, and &ldquo;Advanced options&rdquo; as default and select Next.</p>
 <p>7.Wait till the &ldquo;Logical ID&rdquo; &ldquo;[Your Initials]-S3-Web-Host&rdquo; shows a status of &ldquo;CREATE_COMPLETE&rdquo;. You will need to click on the refresh button to get the updated status of your stack.</p>
-<p><img src="/images/Lab-1/4/06.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0006.png?featherlight=false&amp;width=90pc" alt=""></p>
 <blockquote>
 <p>The CloudFormation stack creation should be completed in about 3 minutes.</p>
 </blockquote>
@@ -1043,6 +1044,8 @@
 <p><img src="/images/Lab-1/4/07.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><strong>Confirm the successful setup of your instance</strong></p>
 <p>You should now see the &ldquo;S3 Hands-On Lab&rdquo; page which we will use later in the lab.</p>
+<p><img src="/images/Lab-1/4/0007.png?featherlight=false&amp;width=90pc" alt="">
+<img src="/images/Lab-1/4/0008.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p><img src="/images/Lab-1/4/08.png?featherlight=false&amp;width=90pc" alt=""></p>
 <blockquote>
 <p>If the page does not load it is recommended you wait for your instance &ldquo;Status check&rdquo; to show &ldquo;2/2 checks passed&rdquo; and then try again.</p>
@@ -1508,19 +1511,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702781"></script>
-    <script src="/js/jquery.sticky.js?1675702781"></script>
-    <script src="/js/featherlight.min.js?1675702781"></script>
-    <script src="/js/highlight.pack.js?1675702781"></script>
+    <script src="/js/clipboard.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974148"></script>
+    <script src="/js/jquery.sticky.js?1675974148"></script>
+    <script src="/js/featherlight.min.js?1675974148"></script>
+    <script src="/js/highlight.pack.js?1675974148"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702781"></script>
-    <script src="/js/learn.js?1675702781"></script>
-    <script src="/js/hugo-learn.js?1675702781"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974148"></script>
+    <script src="/js/learn.js?1675974148"></script>
+    <script src="/js/hugo-learn.js?1675974148"></script>
 
-    <link href="/mermaid/mermaid.css?1675702781" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702781"></script>
+    <link href="/mermaid/mermaid.css?1675974148" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974148"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

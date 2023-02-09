@@ -12,21 +12,21 @@
     <title>Cleanup: Deleting the objects and the S3 bucket :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702781" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702781" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702781" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702781" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702781" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702781" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702781" rel="stylesheet">
-    <link href="/css/theme.css?1675702781" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702781" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974148" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974148" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974148" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974148" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974148" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974148" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974148" rel="stylesheet">
+    <link href="/css/theme.css?1675974148" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974148" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702781" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974148" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702781"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974148"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702781"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702781"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974148"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974148"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702781"></script>
+<script type="text/javascript" src="/js/search.js?1675974148"></script>
 
     
   </div>
@@ -1007,18 +1007,24 @@
 <p><strong>Delete all objects using the Empty bucket feature</strong></p>
 <p>If you want to delete all objects within a bucket at once, you can use the Empty option in the S3 console:</p>
 <p>1.In the S3 console select the radio button to the left of your bucket and then select the <strong>Empty</strong> button.</p>
-<p>2.You will be taken to the &ldquo;Empty bucket&rdquo; page where it gives you several warnings and requires you to type permanently delete in the confirmation field. Once entered you can then click on the Empty button to remove all the objects permanently.</p>
+<p><img src="/images/Lab-1/4/0044.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>2.You will be taken to the &ldquo;Empty bucket&rdquo; page where it gives you several warnings and requires you to type permanently delete in the confirmation field. Once entered you can then click on the Empty button to remove all the objects permanently.
+<img src="https://static.us-east-1.prod.workshops.aws/public/0e8b2b9c-fa34-48cd-87d4-6dae14889b7b/static/images/storage/29-s3-empty-bucket.png" alt=""></p>
 <p>3.You will then be taken to the &ldquo;Empty bucket: status&rdquo; page with a message that you successfully emptied your bucket. Click on Exit to return to the S3 console</p>
 <p><strong>Delete your bucket</strong></p>
 <p>1.In the S3 console click on your bucket named [your-bucket-name] to open the overview page.</p>
 <p>2.Your bucket should now be empty. Click on the toggle labeled &ldquo;Show Versions&rdquo; to confirm there aren&rsquo;t any previous versions of objects still in your bucket.</p>
+<p><img src="/images/Lab-1/4/0045.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.Return to the &ldquo;Buckets&rdquo; page in the S3 console, select the radio button to the left of your bucket, and then select the Delete button.</p>
+<p><img src="/images/Lab-1/4/0046.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.On the &ldquo;Delete bucket&rdquo; page you will need to type in [your-bucket-name] in the text input field and then click on Delete bucket.</p>
 <p>5.Once deleted you will be returned to the S3 buckets page with the message &ldquo;Successfully deleted bucket [your-bucket-name]&rdquo;.</p>
 <p><strong>Deleting your CloudFormation Stack</strong></p>
 <p>1.In the console open CloudFormation under services or with search.</p>
 <p>2.Select the stack named [Your Initials]-S3-Web-Host and then the Delete button.</p>
+<p><img src="/images/Lab-1/4/0047.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>3.In the popup select Delete stack.</p>
+<p><img src="/images/Lab-1/4/0048.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>4.The stack will take a few minutes to delete, select the refresh button to see the updated status. The stack will no longer be visible when it is deleted.</p>
 
 
@@ -1482,19 +1488,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702781"></script>
-    <script src="/js/jquery.sticky.js?1675702781"></script>
-    <script src="/js/featherlight.min.js?1675702781"></script>
-    <script src="/js/highlight.pack.js?1675702781"></script>
+    <script src="/js/clipboard.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974148"></script>
+    <script src="/js/jquery.sticky.js?1675974148"></script>
+    <script src="/js/featherlight.min.js?1675974148"></script>
+    <script src="/js/highlight.pack.js?1675974148"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702781"></script>
-    <script src="/js/learn.js?1675702781"></script>
-    <script src="/js/hugo-learn.js?1675702781"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974148"></script>
+    <script src="/js/learn.js?1675974148"></script>
+    <script src="/js/hugo-learn.js?1675974148"></script>
 
-    <link href="/mermaid/mermaid.css?1675702781" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702781"></script>
+    <link href="/mermaid/mermaid.css?1675974148" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974148"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

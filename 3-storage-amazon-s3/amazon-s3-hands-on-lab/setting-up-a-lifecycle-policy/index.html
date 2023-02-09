@@ -12,21 +12,21 @@
     <title>Setting up a Lifecycle Policy :: AWS Networking and Content Delivery</title>
 
     
-    <link href="/css/nucleus.css?1675702781" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1675702781" rel="stylesheet">
-    <link href="/css/hybrid.css?1675702781" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1675702781" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1675702781" rel="stylesheet">
-    <link href="/css/auto-complete.css?1675702781" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1675702781" rel="stylesheet">
-    <link href="/css/theme.css?1675702781" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1675702781" rel="stylesheet">
+    <link href="/css/nucleus.css?1675974148" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675974148" rel="stylesheet">
+    <link href="/css/hybrid.css?1675974148" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675974148" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675974148" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675974148" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675974148" rel="stylesheet">
+    <link href="/css/theme.css?1675974148" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675974148" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1675702781" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1675974148" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1675702781"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675974148"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1675702781"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1675702781"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675974148"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675974148"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1675702781"></script>
+<script type="text/javascript" src="/js/search.js?1675974148"></script>
 
     
   </div>
@@ -1006,8 +1006,17 @@
 <p>A versioning-enabled bucket can have many versions of the same object, one current version and zero or more noncurrent (previous) versions. Using a lifecycle policy, you can define actions specific to current and noncurrent object versions.</p>
 <p>We are going to setup a lifecycle policy that will move noncurrent (previous) versions of your objects to the S3 Infrequent Access (IA) tier after 30 days and then delete them 30 days later.</p>
 <p>1.In your bucket&rsquo;s overview page, select the Management tab.</p>
+<p><img src="/images/Lab-1/4/0038.png?featherlight=false&amp;width=90pc" alt=""></p>
 <p>2.Under &ldquo;Lifecycle rules&rdquo; select the Create lifecycle rule button. This should then open the &ldquo;Create lifecycle rule&rdquo; page.You now have a lifecycle policy that will move previous versions of your objects to S3-IA after 30 days and then delete them 30 days later.</p>
-<p><img src="/images/Lab-1/4/28.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p><img src="/images/Lab-1/4/0039.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>3.Under &ldquo;Transition noncurrent versions of objects between storage classes&rdquo; select Standard-IA for &ldquo;Choose storage class transitions&rdquo;. Enter 30 for &ldquo;Days after objects become noncurrent&rdquo;.</p>
+<p><img src="/images/Lab-1/4/0040.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>4.Under &ldquo;Permanently delete noncurrent versions of objects&rdquo; enter 60. This will delete an object 60 days after it becomes previous versions. (30 days after it is moved to S3-IA.)</p>
+<p><img src="/images/Lab-1/4/0041.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>5.Select <strong>Create rule</strong> when you have finished reviewing the summary.</p>
+<p><img src="/images/Lab-1/4/0042.png?featherlight=false&amp;width=90pc" alt=""></p>
+<p>6.You now have a lifecycle policy that will move previous versions of your objects to S3-IA after 30 days and then delete them 30 days later.</p>
+<p><img src="/images/Lab-1/4/0043.png?featherlight=false&amp;width=90pc" alt=""></p>
 
 
 
@@ -1473,19 +1482,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.min.js?1675702781"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1675702781"></script>
-    <script src="/js/jquery.sticky.js?1675702781"></script>
-    <script src="/js/featherlight.min.js?1675702781"></script>
-    <script src="/js/highlight.pack.js?1675702781"></script>
+    <script src="/js/clipboard.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675974148"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675974148"></script>
+    <script src="/js/jquery.sticky.js?1675974148"></script>
+    <script src="/js/featherlight.min.js?1675974148"></script>
+    <script src="/js/highlight.pack.js?1675974148"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1675702781"></script>
-    <script src="/js/learn.js?1675702781"></script>
-    <script src="/js/hugo-learn.js?1675702781"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675974148"></script>
+    <script src="/js/learn.js?1675974148"></script>
+    <script src="/js/hugo-learn.js?1675974148"></script>
 
-    <link href="/mermaid/mermaid.css?1675702781" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1675702781"></script>
+    <link href="/mermaid/mermaid.css?1675974148" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1675974148"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
